@@ -19,8 +19,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 import static com.google.common.collect.MapMakerInternalMap.Strength.SOFT;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Ascii;
 import com.google.common.base.Equivalence;
 import com.google.common.base.Function;
@@ -102,7 +100,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class MapMaker extends GenericMapMaker<Object, Object> {
   private static final int DEFAULT_INITIAL_CAPACITY = 16;
   private static final int DEFAULT_CONCURRENCY_LEVEL = 4;
@@ -142,7 +139,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    * #weakKeys} is specified, and {@link Equivalence#equals()} otherwise. The only place this is
    * used is in {@link Interners.WeakInterner}.
    */
-  @GwtIncompatible("To be supported")
   @Override
   MapMaker keyEquivalence(Equivalence<Object> equivalence) {
     checkState(keyEquivalence == null, "key equivalence was already set to %s", keyEquivalence);
@@ -259,7 +255,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    * @throws IllegalStateException if the key strength was already set
    * @see WeakReference
    */
-  @GwtIncompatible("java.lang.ref.WeakReference")
   @Override
   public MapMaker weakKeys() {
     return setKeyStrength(Strength.WEAK);
@@ -297,7 +292,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    * @throws IllegalStateException if the value strength was already set
    * @see WeakReference
    */
-  @GwtIncompatible("java.lang.ref.WeakReference")
   @Override
   public MapMaker weakValues() {
     return setValueStrength(Strength.WEAK);
@@ -329,7 +323,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    *     method is scheduled for removal in March 2015.</b>
    */
   @Deprecated
-  @GwtIncompatible("java.lang.ref.SoftReference")
   @Override
   public MapMaker softValues() {
     return setValueStrength(Strength.SOFT);
@@ -425,7 +418,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    *     from {@code MapMaker}.
    */
   @Deprecated
-  @GwtIncompatible("To be supported")
   @Override
   MapMaker expireAfterAccess(long duration, TimeUnit unit) {
     checkExpiration(duration, unit);
@@ -477,7 +469,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    *     {@code MapMaker}.
    */
   @Deprecated
-  @GwtIncompatible("To be supported")
   <K, V> GenericMapMaker<K, V> removalListener(RemovalListener<K, V> listener) {
     checkState(this.removalListener == null);
 
@@ -516,7 +507,6 @@ public final class MapMaker extends GenericMapMaker<Object, Object> {
    * that class not exposed through ConcurrentMap.
    */
   @Override
-  @GwtIncompatible("MapMakerInternalMap")
   <K, V> MapMakerInternalMap<K, V> makeCustomMap() {
     return new MapMakerInternalMap<K, V>(this);
   }

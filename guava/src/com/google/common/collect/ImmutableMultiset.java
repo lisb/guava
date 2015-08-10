@@ -18,8 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.collect.Multiset.Entry;
 import com.google.common.primitives.Ints;
 
@@ -46,7 +44,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // we're overriding default serialization
 // TODO(user): write an efficient asList() implementation
 public abstract class ImmutableMultiset<E> extends ImmutableCollection<E>
@@ -317,7 +314,6 @@ public abstract class ImmutableMultiset<E> extends ImmutableCollection<E>
     throw new UnsupportedOperationException();
   }
 
-  @GwtIncompatible("not present in emulated superclass")
   @Override
   int copyIntoArray(Object[] dst, int offset) {
     for (Multiset.Entry<E> entry : entrySet()) {
@@ -404,7 +400,6 @@ public abstract class ImmutableMultiset<E> extends ImmutableCollection<E>
 
     // We can't label this with @Override, because it doesn't override anything
     // in the GWT emulated version.
-    // TODO(cpovirk): try making all copies of this method @GwtIncompatible instead
     Object writeReplace() {
       return new EntrySetSerializedForm<E>(ImmutableMultiset.this);
     }

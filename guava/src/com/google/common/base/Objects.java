@@ -18,7 +18,6 @@ package com.google.common.base;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Arrays;
 
@@ -35,7 +34,6 @@ import javax.annotation.Nullable;
  * @author Laurence Gonsalves
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public final class Objects {
   private Objects() {}
 

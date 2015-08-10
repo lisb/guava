@@ -17,7 +17,6 @@
 package com.google.common.base;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.io.Serializable;
@@ -35,7 +34,6 @@ import javax.annotation.Nullable;
  * @author Harry Heymann
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public final class Suppliers {
   private Suppliers() {}
 

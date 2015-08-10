@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 
@@ -74,7 +73,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 7.0
  */
-@GwtCompatible(serializable = true)
 @Beta
 public class TreeBasedTable<R, C, V> extends StandardRowSortedTable<R, C, V> {
   private final Comparator<? super C> columnComparator;

@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Map.Entry;
 import java.util.Set;
@@ -32,7 +31,6 @@ import javax.annotation.Nullable;
  * @author Kurt Alfred Kluever
  * @since 3.0
  */
-@GwtCompatible
 public abstract class ForwardingSetMultimap<K, V>
     extends ForwardingMultimap<K, V> implements SetMultimap<K, V> {
 

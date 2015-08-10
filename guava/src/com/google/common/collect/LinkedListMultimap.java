@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkState;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 import static java.util.Collections.unmodifiableList;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -98,7 +96,6 @@ import javax.annotation.Nullable;
  * @author Mike Bostock
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V>
     implements ListMultimap<K, V>, Serializable {
   /*
@@ -787,7 +784,6 @@ public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V>
    *     the first key, the number of values for that key, and the key's values,
    *     followed by successive keys and values from the entries() ordering
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     stream.writeInt(size());
@@ -797,7 +793,6 @@ public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V>
     }
   }
 
-  @GwtIncompatible("java.io.ObjectInputStream")
   private void readObject(ObjectInputStream stream)
       throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
@@ -812,6 +807,5 @@ public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V>
     }
   }
 
-  @GwtIncompatible("java serialization not supported")
   private static final long serialVersionUID = 0;
 }

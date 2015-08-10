@@ -19,7 +19,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.BoundType.CLOSED;
 import static com.google.common.collect.BoundType.OPEN;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Objects;
 
 import java.io.Serializable;
@@ -36,7 +35,6 @@ import javax.annotation.Nullable;
  *
  * @author Louis Wasserman
  */
-@GwtCompatible(serializable = true)
 final class GeneralRange<T> implements Serializable {
   /**
    * Converts a Range to a GeneralRange.

@@ -16,7 +16,6 @@
 
 package com.google.common.base;
 
-import com.google.common.annotations.GwtCompatible;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +31,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public interface Predicate<T> {
   /**
    * Returns the result of applying this predicate to {@code input}. This method is <i>generally

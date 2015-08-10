@@ -24,8 +24,6 @@ import static java.lang.Float.NEGATIVE_INFINITY;
 import static java.lang.Float.POSITIVE_INFINITY;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Converter;
 
 import java.io.Serializable;
@@ -50,7 +48,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 1.0
  */
-@GwtCompatible(emulated = true)
 public final class Floats {
   private Floats() {}
 
@@ -451,7 +448,6 @@ public final class Floats {
     return new FloatArrayAsList(backingArray);
   }
 
-  @GwtCompatible
   private static class FloatArrayAsList extends AbstractList<Float>
       implements RandomAccess, Serializable {
     final float[] array;
@@ -593,7 +589,6 @@ public final class Floats {
    *     parsed as a {@code float} value
    * @since 14.0
    */
-  @GwtIncompatible("regular expressions")
   @Nullable
   @Beta
   public static Float tryParse(String string) {

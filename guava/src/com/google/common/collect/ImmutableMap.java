@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkEntryNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.collect.ImmutableMapEntry.TerminalEntry;
 
 import java.io.Serializable;
@@ -57,7 +56,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // we're overriding default serialization
 public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable {
 

@@ -17,7 +17,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Equivalence;
 import com.google.common.base.Function;
 import com.google.common.collect.MapMakerInternalMap.ReferenceEntry;
@@ -58,7 +57,6 @@ public final class Interners {
    * when the memory usage of that implementation is unacceptable. Note that unlike {@link
    * String#intern}, using this interner does not consume memory in the permanent generation.
    */
-  @GwtIncompatible("java.lang.ref.WeakReference")
   public static <E> Interner<E> newWeakInterner() {
     return new WeakInterner<E>();
   }

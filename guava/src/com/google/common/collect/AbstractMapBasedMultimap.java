@@ -20,8 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.collect.Maps.ImprovedAbstractMap;
 
 import java.io.Serializable;
@@ -87,7 +85,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @author Louis Wasserman
  */
-@GwtCompatible(emulated = true)
 abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V>
     implements Serializable {
   /*
@@ -679,7 +676,6 @@ abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V>
     }
   }
 
-  @GwtIncompatible("NavigableSet")
   class WrappedNavigableSet extends WrappedSortedSet implements NavigableSet<V> {
     WrappedNavigableSet(
         @Nullable K key, NavigableSet<V> delegate, @Nullable WrappedCollection ancestor) {
@@ -1019,7 +1015,6 @@ abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V>
     }
   }
 
-  @GwtIncompatible("NavigableSet")
   class NavigableKeySet extends SortedKeySet implements NavigableSet<K> {
     NavigableKeySet(NavigableMap<K, Collection<V>> subMap) {
       super(subMap);
@@ -1415,7 +1410,6 @@ abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V>
     }
   }
 
-  @GwtIncompatible("NavigableAsMap")
   class NavigableAsMap extends SortedAsMap implements NavigableMap<K, Collection<V>> {
 
     NavigableAsMap(NavigableMap<K, Collection<V>> submap) {

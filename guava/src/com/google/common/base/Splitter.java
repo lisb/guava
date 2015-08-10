@@ -20,8 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,7 +97,6 @@ import javax.annotation.CheckReturnValue;
  * @author Louis Wasserman
  * @since 1.0
  */
-@GwtCompatible(emulated = true)
 public final class Splitter {
   private final CharMatcher trimmer;
   private final boolean omitEmptyStrings;
@@ -211,7 +208,6 @@ public final class Splitter {
    * @throws IllegalArgumentException if {@code separatorPattern} matches the
    *     empty string
    */
-  @GwtIncompatible("java.util.regex")
   public static Splitter on(final Pattern separatorPattern) {
     checkNotNull(separatorPattern);
     checkArgument(!separatorPattern.matcher("").matches(),
@@ -249,7 +245,6 @@ public final class Splitter {
    * @throws IllegalArgumentException if {@code separatorPattern} matches the
    *     empty string
    */
-  @GwtIncompatible("java.util.regex")
   public static Splitter onPattern(String separatorPattern) {
     return on(Pattern.compile(separatorPattern));
   }

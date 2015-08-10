@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -40,7 +39,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public final class Functions {
   private Functions() {}
 

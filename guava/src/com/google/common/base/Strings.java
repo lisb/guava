@@ -19,7 +19,6 @@ package com.google.common.base;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Formatter;
@@ -33,7 +32,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 3.0
  */
-@GwtCompatible
 public final class Strings {
   private Strings() {}
 

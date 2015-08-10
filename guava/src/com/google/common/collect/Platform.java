@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps.EntryTransformer;
@@ -35,7 +34,6 @@ import java.util.SortedSet;
  *
  * @author Hayward Chan
  */
-@GwtCompatible(emulated = true)
 final class Platform {
   /**
    * Returns a new array of the given length with the same type as a reference

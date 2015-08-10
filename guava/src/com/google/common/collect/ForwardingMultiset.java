@@ -17,7 +17,6 @@
 package com.google.common.collect;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Objects;
 
 import java.util.Collection;
@@ -48,7 +47,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public abstract class ForwardingMultiset<E> extends ForwardingCollection<E>
     implements Multiset<E> {
 

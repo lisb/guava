@@ -16,8 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.util.Map.Entry;
@@ -30,7 +28,6 @@ import javax.annotation.Nullable;
  * @author Jesse Wilson
  * @author Kevin Bourrillion
  */
-@GwtCompatible(emulated = true)
 abstract class ImmutableMapEntrySet<K, V> extends ImmutableSet<Entry<K, V>> {
   ImmutableMapEntrySet() {}
 
@@ -56,13 +53,11 @@ abstract class ImmutableMapEntrySet<K, V> extends ImmutableSet<Entry<K, V>> {
     return map().isPartialView();
   }
 
-  @GwtIncompatible("serialization")
   @Override
   Object writeReplace() {
     return new EntrySetSerializedForm<K, V>(map());
   }
 
-  @GwtIncompatible("serialization")
   private static class EntrySetSerializedForm<K, V> implements Serializable {
     final ImmutableMap<K, V> map;
     EntrySetSerializedForm(ImmutableMap<K, V> map) {

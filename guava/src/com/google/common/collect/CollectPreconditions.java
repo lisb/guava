@@ -18,12 +18,10 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkState;
 
-import com.google.common.annotations.GwtCompatible;
 
 /**
  * Precondition checks useful in collection implementations.
  */
-@GwtCompatible
 final class CollectPreconditions {
 
   static void checkEntryNotNull(Object key, Object value) {

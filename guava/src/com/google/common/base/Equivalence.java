@@ -19,7 +19,6 @@ package com.google.common.base;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 
@@ -36,7 +35,6 @@ import javax.annotation.Nullable;
  * @since 10.0 (<a href="http://code.google.com/p/guava-libraries/wiki/Compatibility"
  *        >mostly source-compatible</a> since 4.0)
  */
-@GwtCompatible
 public abstract class Equivalence<T> {
   /**
    * Constructor for use by subclasses.
@@ -237,7 +235,6 @@ public abstract class Equivalence<T> {
    *
    * @since 10.0
    */
-  @GwtCompatible(serializable = true)
   public final <S extends T> Equivalence<Iterable<S>> pairwise() {
     // Ideally, the returned equivalence would support Iterable<? extends T>. However,
     // the need for this is so rare that it's not worth making callers deal with the ugly wildcard.

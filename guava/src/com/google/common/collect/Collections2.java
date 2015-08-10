@@ -25,7 +25,6 @@ import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 import static com.google.common.math.LongMath.binomial;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
@@ -52,7 +51,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public final class Collections2 {
   private Collections2() {}
 

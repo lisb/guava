@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -34,7 +33,6 @@ import javax.annotation.Nullable;
  *
  * @author Jared Levy
  */
-@GwtCompatible
 abstract class AbstractSortedSetMultimap<K, V>
     extends AbstractSetMultimap<K, V> implements SortedSetMultimap<K, V> {
   /**

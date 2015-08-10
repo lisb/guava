@@ -19,7 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 
@@ -87,7 +86,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public abstract class Ordering<T> implements Comparator<T> {
   // Natural order
 
@@ -100,7 +98,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    * the technically correct {@code <C extends Comparable<? super C>>}, to
    * support legacy types from before Java 5.
    */
-  @GwtCompatible(serializable = true)
   @SuppressWarnings("unchecked") // TODO(kevinb): right way to explain this??
   public static <C extends Comparable> Ordering<C> natural() {
     return (Ordering<C>) NaturalOrdering.INSTANCE;
@@ -119,7 +116,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    * @return comparator itself if it is already an {@code Ordering}; otherwise
    *     an ordering that wraps that comparator
    */
-  @GwtCompatible(serializable = true)
   public static <T> Ordering<T> from(Comparator<T> comparator) {
     return (comparator instanceof Ordering)
         ? (Ordering<T>) comparator
@@ -131,7 +127,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *
    * @deprecated no need to use this
    */
-  @GwtCompatible(serializable = true)
   @Deprecated public static <T> Ordering<T> from(Ordering<T> ordering) {
     return checkNotNull(ordering);
   }
@@ -157,7 +152,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    * @throws IllegalArgumentException if {@code valuesInOrder} contains any
    *     duplicate values (according to {@link Object#equals})
    */
-  @GwtCompatible(serializable = true)
   public static <T> Ordering<T> explicit(List<T> valuesInOrder) {
     return new ExplicitOrdering<T>(valuesInOrder);
   }
@@ -185,7 +179,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    * @throws IllegalArgumentException if any duplicate values (according to
    *     {@link Object#equals(Object)}) are present among the method arguments
    */
-  @GwtCompatible(serializable = true)
   public static <T> Ordering<T> explicit(
       T leastValue, T... remainingValuesInOrder) {
     return explicit(Lists.asList(leastValue, remainingValuesInOrder));
@@ -219,7 +212,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *
    * @since 13.0
    */
-  @GwtCompatible(serializable = true)
   @SuppressWarnings("unchecked")
   public static Ordering<Object> allEqual() {
     return AllEqualOrdering.INSTANCE;
@@ -232,7 +224,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *
    * <p>The comparator is serializable.
    */
-  @GwtCompatible(serializable = true)
   public static Ordering<Object> usingToString() {
     return UsingToStringOrdering.INSTANCE;
   }
@@ -328,7 +319,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    */
   // type parameter <S> lets us avoid the extra <String> in statements like:
   // Ordering<String> o = Ordering.<String>natural().reverse();
-  @GwtCompatible(serializable = true)
   public <S extends T> Ordering<S> reverse() {
     return new ReverseOrdering<S>(this);
   }
@@ -339,7 +329,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    */
   // type parameter <S> lets us avoid the extra <String> in statements like:
   // Ordering<String> o = Ordering.<String>natural().nullsFirst();
-  @GwtCompatible(serializable = true)
   public <S extends T> Ordering<S> nullsFirst() {
     return new NullsFirstOrdering<S>(this);
   }
@@ -350,7 +339,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    */
   // type parameter <S> lets us avoid the extra <String> in statements like:
   // Ordering<String> o = Ordering.<String>natural().nullsLast();
-  @GwtCompatible(serializable = true)
   public <S extends T> Ordering<S> nullsLast() {
     return new NullsLastOrdering<S>(this);
   }
@@ -364,7 +352,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *   Ordering.from(String.CASE_INSENSITIVE_ORDER)
    *       .onResultOf(Functions.toStringFunction())}</pre>
    */
-  @GwtCompatible(serializable = true)
   public <F> Ordering<F> onResultOf(Function<F, ? extends T> function) {
     return new ByFunctionOrdering<F, T>(function, this);
   }
@@ -384,7 +371,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    * is equivalent to one created using {@link Ordering#compound(Iterable)} on
    * the same component comparators.
    */
-  @GwtCompatible(serializable = true)
   public <U extends T> Ordering<U> compound(
       Comparator<? super U> secondaryComparator) {
     return new CompoundOrdering<U>(this, checkNotNull(secondaryComparator));
@@ -405,7 +391,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *
    * @param comparators the comparators to try in order
    */
-  @GwtCompatible(serializable = true)
   public static <T> Ordering<T> compound(
       Iterable<? extends Comparator<? super T>> comparators) {
     return new CompoundOrdering<T>(comparators);
@@ -425,7 +410,6 @@ public abstract class Ordering<T> implements Comparator<T> {
    *
    * @since 2.0
    */
-  @GwtCompatible(serializable = true)
   // type parameter <S> lets us avoid the extra <String> in statements like:
   // Ordering<Iterable<String>> o =
   //     Ordering.<String>natural().lexicographical();

@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Map;
@@ -34,7 +33,6 @@ import javax.annotation.Nullable;
  * @author Robert Konigsberg
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public abstract class ForwardingMultimap<K, V> extends ForwardingObject
     implements Multimap<K, V> {
 

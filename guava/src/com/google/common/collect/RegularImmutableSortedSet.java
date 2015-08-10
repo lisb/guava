@@ -24,8 +24,6 @@ import static com.google.common.collect.SortedLists.KeyPresentBehavior.ANY_PRESE
 import static com.google.common.collect.SortedLists.KeyPresentBehavior.FIRST_AFTER;
 import static com.google.common.collect.SortedLists.KeyPresentBehavior.FIRST_PRESENT;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -43,7 +41,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @author Louis Wasserman
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial")
 final class RegularImmutableSortedSet<E> extends ImmutableSortedSet<E> {
 
@@ -60,7 +57,6 @@ final class RegularImmutableSortedSet<E> extends ImmutableSortedSet<E> {
     return elements.iterator();
   }
 
-  @GwtIncompatible("NavigableSet")
   @Override public UnmodifiableIterator<E> descendingIterator() {
     return elements.reverse().iterator();
   }

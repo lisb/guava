@@ -18,8 +18,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.util.Collections;
 import java.util.NoSuchElementException;
@@ -37,7 +35,6 @@ import java.util.Set;
  * @since 10.0
  */
 @Beta
-@GwtCompatible(emulated = true)
 @SuppressWarnings("rawtypes") // allow ungenerified Comparable types
 public abstract class ContiguousSet<C extends Comparable> extends ImmutableSortedSet<C> {
   /**
@@ -90,7 +87,6 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
   /**
    * @since 12.0
    */
-  @GwtIncompatible("NavigableSet")
   @Override public ContiguousSet<C> headSet(C toElement, boolean inclusive) {
     return headSetImpl(checkNotNull(toElement), inclusive);
   }
@@ -105,7 +101,6 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
   /**
    * @since 12.0
    */
-  @GwtIncompatible("NavigableSet")
   @Override public ContiguousSet<C> subSet(C fromElement, boolean fromInclusive, C toElement,
       boolean toInclusive) {
     checkNotNull(fromElement);
@@ -121,7 +116,6 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
   /**
    * @since 12.0
    */
-  @GwtIncompatible("NavigableSet")
   @Override public ContiguousSet<C> tailSet(C fromElement, boolean inclusive) {
     return tailSetImpl(checkNotNull(fromElement), inclusive);
   }

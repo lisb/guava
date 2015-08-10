@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.util.Arrays.asList;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
@@ -61,7 +59,6 @@ import javax.annotation.Nullable;
  * @author Mike Ward
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 public class ImmutableSetMultimap<K, V>
     extends ImmutableMultimap<K, V>
     implements SetMultimap<K, V> {
@@ -473,7 +470,6 @@ public class ImmutableSetMultimap<K, V>
    * @serialData number of distinct keys, and then for each distinct key: the
    *     key, the number of values for that key, and the key's values
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     stream.writeObject(valueComparator());
@@ -486,7 +482,6 @@ public class ImmutableSetMultimap<K, V>
         : null;
   }
 
-  @GwtIncompatible("java.io.ObjectInputStream")
   // Serialization type safety is at the caller's mercy.
   @SuppressWarnings("unchecked")
   private void readObject(ObjectInputStream stream)
@@ -536,6 +531,5 @@ public class ImmutableSetMultimap<K, V>
         this, emptySet(valueComparator));
   }
 
-  @GwtIncompatible("not needed in emulated source.")
   private static final long serialVersionUID = 0;
 }

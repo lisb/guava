@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.collect.BoundType.CLOSED;
 import static com.google.common.collect.BoundType.OPEN;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.collect.Multiset.Entry;
 
 import java.util.Comparator;
@@ -37,7 +35,6 @@ import javax.annotation.Nullable;
  *
  * @author Louis Wasserman
  */
-@GwtCompatible(emulated = true)
 final class SortedMultisets {
   private SortedMultisets() {
   }
@@ -85,7 +82,6 @@ final class SortedMultisets {
   /**
    * A skeleton navigable implementation for {@link SortedMultiset#elementSet}.
    */
-  @GwtIncompatible("Navigable")
   static class NavigableElementSet<E> extends ElementSet<E> implements NavigableSet<E> {
     NavigableElementSet(SortedMultiset<E> multiset) {
       super(multiset);

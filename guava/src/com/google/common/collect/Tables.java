@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Supplier;
@@ -48,7 +47,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 7.0
  */
-@GwtCompatible
 public final class Tables {
   private Tables() {}
 

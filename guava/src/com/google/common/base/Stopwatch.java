@@ -27,8 +27,6 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.util.concurrent.TimeUnit;
 
@@ -72,7 +70,6 @@ import java.util.concurrent.TimeUnit;
  * @since 10.0
  */
 @Beta
-@GwtCompatible(emulated = true)
 public final class Stopwatch {
   private final Ticker ticker;
   private boolean isRunning;
@@ -211,7 +208,6 @@ public final class Stopwatch {
   /**
    * Returns a string representation of the current elapsed time.
    */
-  @GwtIncompatible("String.format()")
   @Override public String toString() {
     long nanos = elapsedNanos();
 

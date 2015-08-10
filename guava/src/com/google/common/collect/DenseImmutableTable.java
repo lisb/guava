@@ -16,7 +16,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Map;
 
@@ -26,7 +25,6 @@ import javax.annotation.concurrent.Immutable;
 /**
  * A {@code RegularImmutableTable} optimized for dense data.
  */
-@GwtCompatible
 @Immutable
 final class DenseImmutableTable<R, C, V>
     extends RegularImmutableTable<R, C, V> {

@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.collect.Multisets.setCountImpl;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Objects;
 
 import java.util.AbstractCollection;
@@ -43,7 +42,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @author Louis Wasserman
  */
-@GwtCompatible
 abstract class AbstractMultiset<E> extends AbstractCollection<E>
     implements Multiset<E> {
   // Query Operations

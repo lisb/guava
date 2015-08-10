@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.util.Iterator;
@@ -27,7 +26,6 @@ import javax.annotation.Nullable;
  * An ordering which sorts iterables by comparing corresponding elements
  * pairwise.
  */
-@GwtCompatible(serializable = true)
 final class LexicographicalOrdering<T>
     extends Ordering<Iterable<T>> implements Serializable {
   final Ordering<? super T> elementOrder;

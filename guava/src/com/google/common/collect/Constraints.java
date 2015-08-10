@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,7 +32,6 @@ import java.util.SortedSet;
  * @author Mike Bostock
  * @author Jared Levy
  */
-@GwtCompatible
 final class Constraints {
   private Constraints() {}
 
@@ -184,7 +182,6 @@ final class Constraints {
   }
 
   /** @see Constraints#constrainedList */
-  @GwtCompatible
   private static class ConstrainedList<E> extends ForwardingList<E> {
     final List<E> delegate;
     final Constraint<? super E> constraint;

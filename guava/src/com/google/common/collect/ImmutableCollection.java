@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 import static com.google.common.collect.ObjectArrays.checkElementsNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.util.AbstractCollection;
@@ -42,7 +41,6 @@ import javax.annotation.Nullable;
  * @author Jesse Wilson
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 @SuppressWarnings("serial") // we're overriding default serialization
 public abstract class ImmutableCollection<E> extends AbstractCollection<E>
     implements Serializable {

@@ -16,8 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 
@@ -46,7 +44,6 @@ import java.util.Set;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 public final class HashMultimap<K, V> extends AbstractSetMultimap<K, V> {
   private static final int DEFAULT_VALUES_PER_KEY = 2;
 
@@ -119,14 +116,12 @@ public final class HashMultimap<K, V> extends AbstractSetMultimap<K, V> {
    *     each distinct key: the key, number of values for that key, and the
    *     key's values
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     stream.writeInt(expectedValuesPerKey);
     Serialization.writeMultimap(this, stream);
   }
 
-  @GwtIncompatible("java.io.ObjectInputStream")
   private void readObject(ObjectInputStream stream)
       throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
@@ -137,6 +132,5 @@ public final class HashMultimap<K, V> extends AbstractSetMultimap<K, V> {
     Serialization.populateMultimap(this, stream, distinctKeys);
   }
 
-  @GwtIncompatible("Not needed in emulated source")
   private static final long serialVersionUID = 0;
 }

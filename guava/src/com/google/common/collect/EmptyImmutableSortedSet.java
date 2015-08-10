@@ -16,8 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.util.Collection;
 import java.util.Comparator;
@@ -31,7 +29,6 @@ import javax.annotation.Nullable;
  *
  * @author Jared Levy
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // uses writeReplace(), not default serialization
 class EmptyImmutableSortedSet<E> extends ImmutableSortedSet<E> {
   EmptyImmutableSortedSet(Comparator<? super E> comparator) {
@@ -59,7 +56,6 @@ class EmptyImmutableSortedSet<E> extends ImmutableSortedSet<E> {
     return Iterators.emptyIterator();
   }
 
-  @GwtIncompatible("NavigableSet")
   @Override public UnmodifiableIterator<E> descendingIterator() {
     return Iterators.emptyIterator();
   }

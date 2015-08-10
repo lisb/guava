@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Equivalence;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
@@ -110,7 +109,6 @@ import javax.annotation.Nullable;
  * @author Gregory Kick
  * @since 10.0
  */
-@GwtCompatible
 @SuppressWarnings("rawtypes")
 public final class Range<C extends Comparable> implements Predicate<C>, Serializable {
 

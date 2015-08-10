@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -85,7 +84,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public interface Multiset<E> extends Collection<E> {
   // Query Operations
 

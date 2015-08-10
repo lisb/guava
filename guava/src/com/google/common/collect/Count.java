@@ -14,7 +14,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 
@@ -25,7 +24,6 @@ import javax.annotation.Nullable;
  *
  * @author Louis Wasserman
  */
-@GwtCompatible
 final class Count implements Serializable {
   private int value;
 

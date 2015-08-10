@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2.FilteredCollection;
@@ -60,7 +58,6 @@ import javax.annotation.Nullable;
  * @author Chris Povirk
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class Sets {
   private Sets() {}
 
@@ -92,7 +89,6 @@ public final class Sets {
    * @return an immutable set containing those elements, minus duplicates
    */
   // http://code.google.com/p/google-web-toolkit/issues/detail?id=3028
-  @GwtCompatible(serializable = true)
   public static <E extends Enum<E>> ImmutableSet<E> immutableEnumSet(
       E anElement, E... otherElements) {
     return ImmutableEnumSet.asImmutable(EnumSet.of(anElement, otherElements));
@@ -110,7 +106,6 @@ public final class Sets {
    * @return an immutable set containing those elements, minus duplicates
    */
   // http://code.google.com/p/google-web-toolkit/issues/detail?id=3028
-  @GwtCompatible(serializable = true)
   public static <E extends Enum<E>> ImmutableSet<E> immutableEnumSet(
       Iterable<E> elements) {
     if (elements instanceof ImmutableEnumSet) {
@@ -404,7 +399,6 @@ public final class Sets {
    * @return a new, empty {@code CopyOnWriteArraySet}
    * @since 12.0
    */
-  @GwtIncompatible("CopyOnWriteArraySet")
   public static <E> CopyOnWriteArraySet<E> newCopyOnWriteArraySet() {
     return new CopyOnWriteArraySet<E>();
   }
@@ -416,7 +410,6 @@ public final class Sets {
    * @return a new {@code CopyOnWriteArraySet} containing those elements
    * @since 12.0
    */
-  @GwtIncompatible("CopyOnWriteArraySet")
   public static <E> CopyOnWriteArraySet<E> newCopyOnWriteArraySet(
       Iterable<? extends E> elements) {
     // We copy elements to an ArrayList first, rather than incurring the
@@ -901,7 +894,6 @@ public final class Sets {
    *
    * @since 14.0
    */
-  @GwtIncompatible("NavigableSet")
   @SuppressWarnings("unchecked")
   public static <E> NavigableSet<E> filter(
       NavigableSet<E> unfiltered, Predicate<? super E> predicate) {
@@ -919,7 +911,6 @@ public final class Sets {
         checkNotNull(unfiltered), checkNotNull(predicate));
   }
 
-  @GwtIncompatible("NavigableSet")
   private static class FilteredNavigableSet<E> extends FilteredSortedSet<E>
       implements NavigableSet<E> {
     FilteredNavigableSet(NavigableSet<E> unfiltered, Predicate<? super E> predicate) {
@@ -1224,7 +1215,6 @@ public final class Sets {
    *      Wikipedia</a>
    * @since 4.0
    */
-  @GwtCompatible(serializable = false)
   public static <E> Set<Set<E>> powerSet(Set<E> set) {
     return new PowerSet<E>(set);
   }
@@ -1384,7 +1374,6 @@ public final class Sets {
    * @return an unmodifiable view of the specified navigable set
    * @since 12.0
    */
-  @GwtIncompatible("NavigableSet")
   public static <E> NavigableSet<E> unmodifiableNavigableSet(
       NavigableSet<E> set) {
     if (set instanceof ImmutableSortedSet
@@ -1394,7 +1383,6 @@ public final class Sets {
     return new UnmodifiableNavigableSet<E>(set);
   }
 
-  @GwtIncompatible("NavigableSet")
   static final class UnmodifiableNavigableSet<E>
       extends ForwardingSortedSet<E> implements NavigableSet<E>, Serializable {
     private final NavigableSet<E> delegate;
@@ -1526,7 +1514,6 @@ public final class Sets {
    * @return a synchronized view of the specified navigable set.
    * @since 13.0
    */
-  @GwtIncompatible("NavigableSet")
   public static <E> NavigableSet<E> synchronizedNavigableSet(
       NavigableSet<E> navigableSet) {
     return Synchronized.navigableSet(navigableSet);
@@ -1562,7 +1549,6 @@ public final class Sets {
     }
   }
 
-  @GwtIncompatible("NavigableSet")
   static class DescendingSet<E> extends ForwardingNavigableSet<E> {
     private final NavigableSet<E> forward;
 

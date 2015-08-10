@@ -14,7 +14,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.AbstractCollection;
 import java.util.AbstractSet;
@@ -30,7 +29,6 @@ import javax.annotation.Nullable;
  * 
  * @author Louis Wasserman
  */
-@GwtCompatible
 abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
 
   @Override

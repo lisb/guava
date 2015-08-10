@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.collect.Multisets.UnmodifiableMultiset;
 
 import java.util.Comparator;
@@ -29,7 +28,6 @@ import java.util.NavigableSet;
  * 
  * @author Louis Wasserman
  */
-@GwtCompatible(emulated = true)
 final class UnmodifiableSortedMultiset<E>
     extends UnmodifiableMultiset<E> implements SortedMultiset<E> {
   UnmodifiableSortedMultiset(SortedMultiset<E> delegate) {

@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkElementIndex;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkPositionIndexes;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -47,7 +45,6 @@ import java.util.RandomAccess;
  * @author Kevin Bourrillion
  * @since 1.0
  */
-@GwtCompatible(emulated = true)
 public final class Chars {
   private Chars() {}
 
@@ -287,7 +284,6 @@ public final class Chars {
    * {@link com.google.common.io.ByteStreams#newDataOutput()} to get a growable
    * buffer.
    */
-  @GwtIncompatible("doesn't work")
   public static byte[] toByteArray(char value) {
     return new byte[] {
         (byte) (value >> 8),
@@ -306,7 +302,6 @@ public final class Chars {
    * @throws IllegalArgumentException if {@code bytes} has fewer than 2
    *     elements
    */
-  @GwtIncompatible("doesn't work")
   public static char fromByteArray(byte[] bytes) {
     checkArgument(bytes.length >= BYTES,
         "array too small: %s < %s", bytes.length, BYTES);
@@ -320,7 +315,6 @@ public final class Chars {
    *
    * @since 7.0
    */
-  @GwtIncompatible("doesn't work")
   public static char fromBytes(byte b1, byte b2) {
     return (char) ((b1 << 8) | (b2 & 0xFF));
   }
@@ -468,7 +462,6 @@ public final class Chars {
     return new CharArrayAsList(backingArray);
   }
 
-  @GwtCompatible
   private static class CharArrayAsList extends AbstractList<Character>
       implements RandomAccess, Serializable {
     final char[] array;

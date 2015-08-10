@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Map;
@@ -31,7 +30,6 @@ import javax.annotation.Nullable;
  *
  * @author Jared Levy
  */
-@GwtCompatible
 abstract class AbstractSetMultimap<K, V>
     extends AbstractMapBasedMultimap<K, V> implements SetMultimap<K, V> {
   /**

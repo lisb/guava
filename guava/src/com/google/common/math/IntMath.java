@@ -27,8 +27,6 @@ import static java.lang.Math.min;
 import static java.math.RoundingMode.HALF_EVEN;
 import static java.math.RoundingMode.HALF_UP;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.math.BigInteger;
@@ -48,7 +46,6 @@ import java.math.RoundingMode;
  * @author Louis Wasserman
  * @since 11.0
  */
-@GwtCompatible(emulated = true)
 public final class IntMath {
   // NOTE: Whenever both tests are cheap and functional, it's faster to use &, | instead of &&, ||
 
@@ -123,7 +120,6 @@ public final class IntMath {
    * @throws ArithmeticException if {@code mode} is {@link RoundingMode#UNNECESSARY} and {@code x}
    *         is not a power of ten
    */
-  @GwtIncompatible("need BigIntegerMath to adequately test")
   @SuppressWarnings("fallthrough")
   public static int log10(int x, RoundingMode mode) {
     checkPositive("x", x);
@@ -185,7 +181,6 @@ public final class IntMath {
    *
    * @throws IllegalArgumentException if {@code k < 0}
    */
-  @GwtIncompatible("failing tests")
   public static int pow(int b, int k) {
     checkNonNegative("exponent", k);
     switch (b) {
@@ -226,7 +221,6 @@ public final class IntMath {
    * @throws ArithmeticException if {@code mode} is {@link RoundingMode#UNNECESSARY} and
    *         {@code sqrt(x)} is not an integer
    */
-  @GwtIncompatible("need BigIntegerMath to adequately test")
   @SuppressWarnings("fallthrough")
   public static int sqrt(int x, RoundingMode mode) {
     checkNonNegative("x", x);
@@ -520,7 +514,6 @@ public final class IntMath {
    *
    * @throws IllegalArgumentException if {@code n < 0}, {@code k < 0} or {@code k > n}
    */
-  @GwtIncompatible("need BigIntegerMath to adequately test")
   public static int binomial(int n, int k) {
     checkNonNegative("n", n);
     checkNonNegative("k", k);

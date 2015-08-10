@@ -22,7 +22,6 @@ import static com.google.common.base.Preconditions.checkPositionIndexes;
 import static com.google.common.collect.ObjectArrays.arraysCopyOf;
 import static com.google.common.collect.ObjectArrays.checkElementsNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -58,7 +57,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // we're overriding default serialization
 public abstract class ImmutableList<E> extends ImmutableCollection<E>
     implements List<E>, RandomAccess {

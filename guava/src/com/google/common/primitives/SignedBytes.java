@@ -19,7 +19,6 @@ package com.google.common.primitives;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Comparator;
 
@@ -38,7 +37,6 @@ import java.util.Comparator;
  */
 // TODO(kevinb): how to prevent warning on UnsignedBytes when building GWT
 // javadoc?
-@GwtCompatible
 public final class SignedBytes {
   private SignedBytes() {}
 

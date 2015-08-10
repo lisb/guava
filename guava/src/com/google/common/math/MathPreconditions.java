@@ -14,7 +14,6 @@
 
 package com.google.common.math;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.math.BigInteger;
 
@@ -25,7 +24,6 @@ import javax.annotation.Nullable;
  *
  * @author Louis Wasserman
  */
-@GwtCompatible
 final class MathPreconditions {
   static int checkPositive(@Nullable String role, int x) {
     if (x <= 0) {

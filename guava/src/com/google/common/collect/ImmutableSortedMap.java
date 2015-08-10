@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Maps.keyOrNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -55,7 +54,6 @@ import javax.annotation.Nullable;
  * @since 2.0 (imported from Google Collections Library; implements {@code
  *        NavigableMap} since 12.0)
  */
-@GwtCompatible(serializable = true, emulated = true)
 public abstract class ImmutableSortedMap<K, V>
     extends ImmutableSortedMapFauxverideShim<K, V> implements NavigableMap<K, V> {
   /*

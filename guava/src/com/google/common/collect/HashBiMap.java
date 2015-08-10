@@ -18,8 +18,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Objects;
 
 import java.io.IOException;
@@ -48,7 +46,6 @@ import javax.annotation.Nullable;
  * @author Mike Bostock
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K, V>, Serializable {
 
   /**
@@ -648,13 +645,11 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
   /**
    * @serialData the number of entries, first key, first value, second key, second value, and so on.
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     Serialization.writeMap(this, stream);
   }
 
-  @GwtIncompatible("java.io.ObjectInputStream")
   private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
     int size = Serialization.readCount(stream);
@@ -662,6 +657,5 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
     Serialization.populateMap(this, stream, size);
   }
 
-  @GwtIncompatible("Not needed in emulated source")
   private static final long serialVersionUID = 0;
 }

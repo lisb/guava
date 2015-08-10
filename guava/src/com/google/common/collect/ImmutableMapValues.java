@@ -16,8 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.util.Map.Entry;
@@ -30,7 +28,6 @@ import javax.annotation.Nullable;
  * @author Jesse Wilson
  * @author Kevin Bourrillion
  */
-@GwtCompatible(emulated = true)
 final class ImmutableMapValues<K, V> extends ImmutableCollection<V> {
   private final ImmutableMap<K, V> map;
   
@@ -74,12 +71,10 @@ final class ImmutableMapValues<K, V> extends ImmutableCollection<V> {
     };
   }
 
-  @GwtIncompatible("serialization")
   @Override Object writeReplace() {
     return new SerializedForm<V>(map);
   }
 
-  @GwtIncompatible("serialization")
   private static class SerializedForm<V> implements Serializable {
     final ImmutableMap<?, V> map;
     SerializedForm(ImmutableMap<?, V> map) {

@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Set;
@@ -45,7 +44,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public abstract class ForwardingSet<E> extends ForwardingCollection<E>
     implements Set<E> {
   // TODO(user): identify places where thread safety is actually lost

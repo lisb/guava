@@ -18,7 +18,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -78,7 +77,6 @@ import java.util.List;
  * @since 12.0
  */
 @Beta
-@GwtIncompatible("hasn't been tested yet")
 public abstract class ImmutableSortedMultiset<E> extends ImmutableSortedMultisetFauxverideShim<E>
     implements SortedMultiset<E> {
   // TODO(user): GWT compatibility

@@ -16,7 +16,6 @@
 
 package com.google.common.base;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.lang.ref.WeakReference;
 
@@ -25,7 +24,6 @@ import java.lang.ref.WeakReference;
  *
  * @author Jesse Wilson
  */
-@GwtCompatible(emulated = true)
 final class Platform {
   private Platform() {}
 

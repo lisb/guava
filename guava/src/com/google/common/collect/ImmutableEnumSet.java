@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -28,7 +27,6 @@ import java.util.EnumSet;
  *
  * @author Jared Levy
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // we're overriding default serialization
 final class ImmutableEnumSet<E extends Enum<E>> extends ImmutableSet<E> {
   static <E extends Enum<E>> ImmutableSet<E> asImmutable(EnumSet<E> set) {

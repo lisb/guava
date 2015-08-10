@@ -20,8 +20,6 @@ import static com.google.common.primitives.UnsignedInts.INT_MASK;
 import static com.google.common.primitives.UnsignedInts.compare;
 import static com.google.common.primitives.UnsignedInts.toLong;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.math.BigInteger;
 
@@ -41,7 +39,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 11.0
  */
-@GwtCompatible(emulated = true)
 public final class UnsignedInteger extends Number implements Comparable<UnsignedInteger> {
   public static final UnsignedInteger ZERO = fromIntBits(0);
   public static final UnsignedInteger ONE = fromIntBits(1);
@@ -144,7 +141,6 @@ public final class UnsignedInteger extends Number implements Comparable<Unsigned
    * @since 14.0
    */
   @CheckReturnValue
-  @GwtIncompatible("Does not truncate correctly")
   public UnsignedInteger times(UnsignedInteger val) {
     // TODO(user): make this GWT-compatible
     return fromIntBits(value * checkNotNull(val).value);

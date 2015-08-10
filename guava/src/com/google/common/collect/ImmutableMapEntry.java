@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.collect.CollectPreconditions.checkEntryNotNull;
 
-import com.google.common.annotations.GwtIncompatible;
 
 import javax.annotation.Nullable;
 
@@ -30,7 +29,6 @@ import javax.annotation.Nullable;
  *
  * @author Louis Wasserman
  */
-@GwtIncompatible("unnecessary")
 abstract class ImmutableMapEntry<K, V> extends ImmutableEntry<K, V> {
   ImmutableMapEntry(K key, V value) {
     super(key, value);

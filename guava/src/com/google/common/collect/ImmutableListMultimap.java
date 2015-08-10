@@ -16,8 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.IOException;
 import java.io.InvalidObjectException;
@@ -52,7 +50,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(serializable = true, emulated = true)
 public class ImmutableListMultimap<K, V>
     extends ImmutableMultimap<K, V>
     implements ListMultimap<K, V> {
@@ -339,13 +336,11 @@ public class ImmutableListMultimap<K, V>
    * @serialData number of distinct keys, and then for each distinct key: the
    *     key, the number of values for that key, and the key's values
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     Serialization.writeMultimap(this, stream);
   }
 
-  @GwtIncompatible("java.io.ObjectInputStream")
   private void readObject(ObjectInputStream stream)
       throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
@@ -384,6 +379,5 @@ public class ImmutableListMultimap<K, V>
     FieldSettersHolder.SIZE_FIELD_SETTER.set(this, tmpSize);
   }
 
-  @GwtIncompatible("Not needed in emulated source")
   private static final long serialVersionUID = 0;
 }

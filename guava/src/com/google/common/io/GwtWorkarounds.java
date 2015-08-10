@@ -17,8 +17,6 @@ package com.google.common.io;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkPositionIndexes;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +31,6 @@ import java.io.Writer;
  *
  * @author Louis Wasserman
  */
-@GwtCompatible(emulated = true)
 final class GwtWorkarounds {
   private GwtWorkarounds() {}
 
@@ -48,7 +45,6 @@ final class GwtWorkarounds {
   /**
    * Views a {@code Reader} as a {@code CharInput}.
    */
-  @GwtIncompatible("Reader")
   static CharInput asCharInput(final Reader reader) {
     checkNotNull(reader);
     return new CharInput() {
@@ -99,7 +95,6 @@ final class GwtWorkarounds {
   /**
    * Views a {@code ByteInput} as an {@code InputStream}.
    */
-  @GwtIncompatible("InputStream")
   static InputStream asInputStream(final ByteInput input) {
     checkNotNull(input);
     return new InputStream() {
@@ -149,7 +144,6 @@ final class GwtWorkarounds {
   /**
    * Views a {@code ByteOutput} as an {@code OutputStream}.
    */
-  @GwtIncompatible("OutputStream")
   static OutputStream asOutputStream(final ByteOutput output) {
     checkNotNull(output);
     return new OutputStream() {
@@ -182,7 +176,6 @@ final class GwtWorkarounds {
   /**
    * Views a {@code Writer} as a {@code CharOutput}.
    */
-  @GwtIncompatible("Writer")
   static CharOutput asCharOutput(final Writer writer) {
     checkNotNull(writer);
     return new CharOutput() {

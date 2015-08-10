@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -29,7 +28,6 @@ import java.util.Set;
  * 
  * @author Louis Wasserman
  */
-@GwtCompatible(emulated = true)
 abstract class DescendingMultiset<E> extends ForwardingMultiset<E>
     implements SortedMultiset<E> {
   abstract SortedMultiset<E> forwardMultiset();

@@ -19,7 +19,6 @@ package com.google.common.base;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.IOException;
 import java.util.AbstractList;
@@ -62,7 +61,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public class Joiner {
   /**
    * Returns a joiner which automatically places {@code separator} between consecutive elements.

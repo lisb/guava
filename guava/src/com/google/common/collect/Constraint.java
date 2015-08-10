@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 /**
  * A constraint that an element must satisfy in order to be added to a
@@ -40,7 +39,6 @@ import com.google.common.annotations.GwtCompatible;
  *
  * @author Mike Bostock
  */
-@GwtCompatible
 interface Constraint<E> {
   /**
    * Throws a suitable {@code RuntimeException} if the specified element is

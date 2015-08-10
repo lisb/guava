@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkEntryNotNull;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -61,7 +59,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public abstract class ImmutableMultimap<K, V> extends AbstractMultimap<K, V>
     implements Serializable {
 
@@ -304,7 +301,6 @@ public abstract class ImmutableMultimap<K, V> extends AbstractMultimap<K, V>
   // These constants allow the deserialization code to set final fields. This
   // holder class makes sure they are not initialized unless an instance is
   // deserialized.
-  @GwtIncompatible("java serialization is not supported")
   static class FieldSettersHolder {
     static final Serialization.FieldSetter<ImmutableMultimap>
         MAP_FIELD_SETTER = Serialization.getFieldSetter(
@@ -654,7 +650,6 @@ public abstract class ImmutableMultimap<K, V> extends AbstractMultimap<K, V>
       return multimap.valueIterator();
     }
 
-    @GwtIncompatible("not present in emulated superclass")
     @Override
     int copyIntoArray(Object[] dst, int offset) {
       for (ImmutableCollection<V> valueCollection : multimap.map.values()) {

@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
@@ -56,7 +54,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class Iterables {
   private Iterables() {}
 
@@ -310,7 +307,6 @@ public final class Iterables {
    * @return a newly-allocated array into which all the elements of the iterable
    *     have been copied
    */
-  @GwtIncompatible("Array.newInstance(Class, int)")
   public static <T> T[] toArray(Iterable<? extends T> iterable, Class<T> type) {
     Collection<? extends T> collection = toCollection(iterable);
     T[] array = ObjectArrays.newArray(type, collection.size());
@@ -602,7 +598,6 @@ public final class Iterables {
    * @return an unmodifiable iterable containing all elements of the original
    *     iterable that were of the requested type
    */
-  @GwtIncompatible("Class.isInstance")
   public static <T> Iterable<T> filter(
       final Iterable<?> unfiltered, final Class<T> type) {
     checkNotNull(unfiltered);

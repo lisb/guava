@@ -19,7 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Optional;
 
 import java.util.ArrayDeque;
@@ -35,7 +34,6 @@ import java.util.Iterator;
  * @since 15.0
  */
 @Beta
-@GwtCompatible(emulated = true)
 public abstract class BinaryTreeTraverser<T> extends TreeTraverser<T> {
   // TODO(user): make this GWT-compatible when we've checked in ArrayDeque and BitSet emulation
 

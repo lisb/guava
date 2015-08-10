@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import javax.annotation.CheckReturnValue;
 
@@ -41,7 +40,6 @@ import javax.annotation.CheckReturnValue;
  * @author Gregory Kick
  * @since 7.0
  */
-@GwtCompatible
 public final class Ascii {
 
   private Ascii() {}

@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.AbstractCollection;
 import java.util.Collection;
@@ -34,7 +33,6 @@ import javax.annotation.Nullable;
  * 
  * @author Louis Wasserman
  */
-@GwtCompatible
 abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
   @Override
   public boolean isEmpty() {

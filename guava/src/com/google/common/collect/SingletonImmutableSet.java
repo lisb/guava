@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Preconditions;
 
 import java.util.Set;
@@ -29,7 +28,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @author Nick Kralevich
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // uses writeReplace(), not default serialization
 final class SingletonImmutableSet<E> extends ImmutableSet<E> {
 

@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import javax.annotation.Nullable;
 
@@ -26,7 +25,6 @@ import javax.annotation.Nullable;
  * @author Bob Lee
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public class ComputationException extends RuntimeException {
   /**
    * Creates a new instance with the given cause.

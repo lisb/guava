@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Preconditions;
 
 import java.util.List;
@@ -30,7 +29,6 @@ import javax.annotation.Nullable;
  *
  * @author Hayward Chan
  */
-@GwtCompatible(serializable = true, emulated = true)
 @SuppressWarnings("serial") // uses writeReplace(), not default serialization
 final class SingletonImmutableList<E> extends ImmutableList<E> {
 

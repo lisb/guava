@@ -24,8 +24,6 @@ import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.POSITIVE_INFINITY;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Converter;
 
 import java.io.Serializable;
@@ -51,7 +49,6 @@ import javax.annotation.Nullable;
  * @author Kevin Bourrillion
  * @since 1.0
  */
-@GwtCompatible(emulated = true)
 public final class Doubles {
   private Doubles() {}
 
@@ -455,7 +452,6 @@ public final class Doubles {
     return new DoubleArrayAsList(backingArray);
   }
 
-  @GwtCompatible
   private static class DoubleArrayAsList extends AbstractList<Double>
       implements RandomAccess, Serializable {
     final double[] array;
@@ -584,10 +580,8 @@ public final class Doubles {
    * semantically fine if not all inputs that pass this regex are valid --
    * only a performance hit is incurred, not a semantics bug.
    */
-  @GwtIncompatible("regular expressions")
   static final Pattern FLOATING_POINT_PATTERN = fpPattern();
 
-  @GwtIncompatible("regular expressions")
   private static Pattern fpPattern() {
     String decimal = "(?:\\d++(?:\\.\\d*+)?|\\.\\d++)";
     String completeDec = decimal + "(?:[eE][+-]?\\d++)?[fFdD]?";
@@ -616,7 +610,6 @@ public final class Doubles {
    *     parsed as a {@code double} value
    * @since 14.0
    */
-  @GwtIncompatible("regular expressions")
   @Nullable
   @Beta
   public static Double tryParse(String string) {

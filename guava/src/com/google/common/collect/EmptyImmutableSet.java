@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Set;
@@ -28,7 +27,6 @@ import javax.annotation.Nullable;
  *
  * @author Kevin Bourrillion
  */
-@GwtCompatible(serializable = true, emulated = true)
 final class EmptyImmutableSet extends ImmutableSet<Object> {
   static final EmptyImmutableSet INSTANCE = new EmptyImmutableSet();
 

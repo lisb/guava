@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.primitives.Ints;
 
 import java.io.InvalidObjectException;
@@ -44,7 +42,6 @@ import javax.annotation.Nullable;
  *
  * @author Kevin Bourrillion
  */
-@GwtCompatible(emulated = true)
 abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E>
     implements Serializable {
 
@@ -290,12 +287,10 @@ abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E>
   }
 
   // Don't allow default serialization.
-  @GwtIncompatible("java.io.ObjectStreamException")
   @SuppressWarnings("unused") // actually used during deserialization
   private void readObjectNoData() throws ObjectStreamException {
     throw new InvalidObjectException("Stream data required");
   }
 
-  @GwtIncompatible("not needed in emulated source.")
   private static final long serialVersionUID = -2250766705698539974L;
 }

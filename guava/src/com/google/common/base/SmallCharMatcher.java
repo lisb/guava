@@ -16,7 +16,6 @@
 
 package com.google.common.base;
 
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.CharMatcher.FastMatcher;
 
@@ -28,7 +27,6 @@ import java.util.BitSet;
  *
  * @author Christopher Swenson
  */
-@GwtIncompatible("no precomputation is done in GWT")
 final class SmallCharMatcher extends FastMatcher {
   static final int MAX_SIZE = 1023;
   private final char[] table;

@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkElementIndex;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Objects;
 
 import java.io.Serializable;
@@ -82,7 +80,6 @@ import javax.annotation.Nullable;
  * @since 10.0
  */
 @Beta
-@GwtCompatible(emulated = true)
 public final class ArrayTable<R, C, V> extends AbstractTable<R, C, V> implements Serializable {
 
   /**
@@ -368,7 +365,6 @@ public final class ArrayTable<R, C, V> extends AbstractTable<R, C, V> implements
    *
    * @param valueClass class of values stored in the returned array
    */
-  @GwtIncompatible("reflection")
   public V[][] toArray(Class<V> valueClass) {
     // Can change to use varargs in JDK 1.6 if we want
     @SuppressWarnings("unchecked") // TODO: safe?

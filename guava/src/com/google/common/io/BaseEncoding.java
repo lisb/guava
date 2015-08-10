@@ -30,8 +30,6 @@ import static java.math.RoundingMode.FLOOR;
 import static java.math.RoundingMode.UNNECESSARY;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Ascii;
 import com.google.common.base.CharMatcher;
 import com.google.common.io.GwtWorkarounds.ByteInput;
@@ -129,7 +127,6 @@ import javax.annotation.Nullable;
  * @since 14.0
  */
 @Beta
-@GwtCompatible(emulated = true)
 public abstract class BaseEncoding {
   // TODO(user): consider adding encodeTo(Appendable, byte[], [int, int])
 
@@ -183,7 +180,6 @@ public abstract class BaseEncoding {
    * {@code Writer}.  When the returned {@code OutputStream} is closed, so is the backing
    * {@code Writer}.
    */
-  @GwtIncompatible("Writer,OutputStream")
   public final OutputStream encodingStream(Writer writer) {
     return asOutputStream(encodingStream(asCharOutput(writer)));
   }
@@ -191,7 +187,6 @@ public abstract class BaseEncoding {
   /**
    * Returns a {@code ByteSink} that writes base-encoded bytes to the specified {@code CharSink}.
    */
-  @GwtIncompatible("ByteSink,CharSink")
   public final ByteSink encodingSink(final CharSink encodedSink) {
     checkNotNull(encodedSink);
     return new ByteSink() {
@@ -258,7 +253,6 @@ public abstract class BaseEncoding {
    * {@code Reader}.  The returned stream throws a {@link DecodingException} upon decoding-specific
    * errors.
    */
-  @GwtIncompatible("Reader,InputStream")
   public final InputStream decodingStream(Reader reader) {
     return asInputStream(decodingStream(asCharInput(reader)));
   }
@@ -267,7 +261,6 @@ public abstract class BaseEncoding {
    * Returns a {@code ByteSource} that reads base-encoded bytes from the specified
    * {@code CharSource}.
    */
-  @GwtIncompatible("ByteSource,CharSource")
   public final ByteSource decodingSource(final CharSource encodedSource) {
     checkNotNull(encodedSource);
     return new ByteSource() {

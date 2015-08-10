@@ -26,8 +26,6 @@ import static com.google.common.base.Predicates.not;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;
@@ -65,7 +63,6 @@ import javax.annotation.Nullable;
  * @author Jared Levy
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class Iterators {
   private Iterators() {}
 
@@ -338,7 +335,6 @@ public final class Iterators {
    * @return a newly-allocated array into which all the elements of the iterator
    *         have been copied
    */
-  @GwtIncompatible("Array.newInstance(Class, int)")
   public static <T> T[] toArray(
       Iterator<? extends T> iterator, Class<T> type) {
     List<T> list = Lists.newArrayList(iterator);
@@ -669,7 +665,6 @@ public final class Iterators {
    *     iterator that were of the requested type
    */
   @SuppressWarnings("unchecked") // can cast to <T> because non-Ts are removed
-  @GwtIncompatible("Class.isInstance")
   public static <T> UnmodifiableIterator<T> filter(
       Iterator<?> unfiltered, Class<T> type) {
     return (UnmodifiableIterator<T>) filter(unfiltered, instanceOf(type));

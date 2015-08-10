@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Optional;
@@ -69,7 +67,6 @@ import javax.annotation.Nullable;
  * @author Marcin Mikosik
  * @since 12.0
  */
-@GwtCompatible(emulated = true)
 public abstract class FluentIterable<E> implements Iterable<E> {
   // We store 'iterable' and use it instead of 'this' to allow Iterables to perform instanceof
   // checks on the _original_ iterable when FluentIterable.from is used.
@@ -204,7 +201,6 @@ public abstract class FluentIterable<E> implements Iterable<E> {
    *
    * @param type the type of elements desired
    */
-  @GwtIncompatible("Class.isInstance")
   @CheckReturnValue
   public final <T> FluentIterable<T> filter(Class<T> type) {
     return from(Iterables.filter(iterable, type));
@@ -469,7 +465,6 @@ public abstract class FluentIterable<E> implements Iterable<E> {
    * @return a newly-allocated array into which all the elements of this fluent iterable have
    *     been copied
    */
-  @GwtIncompatible("Array.newArray(Class, int)")
   public final E[] toArray(Class<E> type) {
     return Iterables.toArray(iterable, type);
   }

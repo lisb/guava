@@ -18,7 +18,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.MoreObjects;
 
 import java.util.Comparator;
@@ -43,7 +42,6 @@ import javax.annotation.Nullable;
  * @author Gregory Kick
  * @since 11.0
  */
-@GwtCompatible
 // TODO(gak): make serializable
 public abstract class ImmutableTable<R, C, V> extends AbstractTable<R, C, V> {
   private static final ImmutableTable<Object, Object, Object> EMPTY

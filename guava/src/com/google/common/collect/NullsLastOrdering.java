@@ -16,14 +16,12 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 
 import javax.annotation.Nullable;
 
 /** An ordering that treats {@code null} as greater than all other values. */
-@GwtCompatible(serializable = true)
 final class NullsLastOrdering<T> extends Ordering<T> implements Serializable {
   final Ordering<? super T> ordering;
 

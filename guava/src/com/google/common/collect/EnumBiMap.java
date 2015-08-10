@@ -19,8 +19,6 @@ package com.google.common.collect;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -40,7 +38,6 @@ import java.util.Map;
  * @author Mike Bostock
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class EnumBiMap<K extends Enum<K>, V extends Enum<V>>
     extends AbstractBiMap<K, V> {
   private transient Class<K> keyType;
@@ -125,7 +122,6 @@ public final class EnumBiMap<K extends Enum<K>, V extends Enum<V>>
    * @serialData the key class, value class, number of entries, first key, first
    *     value, second key, second value, and so on.
    */
-  @GwtIncompatible("java.io.ObjectOutputStream")
   private void writeObject(ObjectOutputStream stream) throws IOException {
     stream.defaultWriteObject();
     stream.writeObject(keyType);
@@ -134,7 +130,6 @@ public final class EnumBiMap<K extends Enum<K>, V extends Enum<V>>
   }
 
   @SuppressWarnings("unchecked") // reading fields populated by writeObject
-  @GwtIncompatible("java.io.ObjectInputStream")
   private void readObject(ObjectInputStream stream)
       throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
@@ -146,6 +141,5 @@ public final class EnumBiMap<K extends Enum<K>, V extends Enum<V>>
     Serialization.populateMap(this, stream);
   }
 
-  @GwtIncompatible("not needed in emulated source.")
   private static final long serialVersionUID = 0;
 }

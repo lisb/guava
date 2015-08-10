@@ -17,7 +17,6 @@
 package com.google.common.collect;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -41,7 +40,6 @@ import java.util.NoSuchElementException;
  * @author Kevin Bourrillion
  * @since 10.0
  */
-@GwtCompatible
 @Beta
 public abstract class DiscreteDomain<C extends Comparable> {
 

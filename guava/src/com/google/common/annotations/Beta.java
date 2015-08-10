@@ -46,5 +46,4 @@ import java.lang.annotation.Target;
     ElementType.METHOD,
     ElementType.TYPE})
 @Documented
-@GwtCompatible
 public @interface Beta {}

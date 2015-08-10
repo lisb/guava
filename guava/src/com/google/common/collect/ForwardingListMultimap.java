@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.List;
 
@@ -31,7 +30,6 @@ import javax.annotation.Nullable;
  * @author Kurt Alfred Kluever
  * @since 3.0
  */
-@GwtCompatible
 public abstract class ForwardingListMultimap<K, V>
     extends ForwardingMultimap<K, V> implements ListMultimap<K, V> {
 

@@ -17,7 +17,6 @@
 package com.google.common.collect;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -51,7 +50,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible
 public abstract class ForwardingList<E> extends ForwardingCollection<E>
     implements List<E> {
   // TODO(user): identify places where thread safety is actually lost

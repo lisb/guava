@@ -17,7 +17,6 @@ package com.google.common.base;
 import static com.google.common.base.Preconditions.format;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
 
 import javax.annotation.Nullable;
 
@@ -87,7 +86,6 @@ import javax.annotation.Nullable;
  * @since 17.0
  */
 @Beta
-@GwtCompatible
 public final class Verify {
   /**
    * Ensures that {@code expression} is {@code true}, throwing a {@code VerifyException} with no

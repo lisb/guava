@@ -14,7 +14,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,7 +23,6 @@ import javax.annotation.concurrent.Immutable;
 /**
  * A {@code RegularImmutableTable} optimized for sparse data.
  */
-@GwtCompatible
 @Immutable
 final class SparseImmutableTable<R, C, V>
     extends RegularImmutableTable<R, C, V> {

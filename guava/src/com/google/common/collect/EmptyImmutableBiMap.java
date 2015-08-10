@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 
 import javax.annotation.Nullable;
 
@@ -25,7 +24,6 @@ import javax.annotation.Nullable;
  *
  * @author Jared Levy
  */
-@GwtCompatible(emulated = true)
 @SuppressWarnings("serial") // uses writeReplace(), not default serialization
 final class EmptyImmutableBiMap extends ImmutableBiMap<Object, Object> {
   static final EmptyImmutableBiMap INSTANCE = new EmptyImmutableBiMap();

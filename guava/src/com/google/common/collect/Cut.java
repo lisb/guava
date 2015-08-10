@@ -16,7 +16,6 @@ package com.google.common.collect;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.primitives.Booleans;
 
 import java.io.Serializable;
@@ -33,7 +32,6 @@ import javax.annotation.Nullable;
  *
  * @author Kevin Bourrillion
  */
-@GwtCompatible
 abstract class Cut<C extends Comparable> implements Comparable<Cut<C>>, Serializable {
   final C endpoint;
 

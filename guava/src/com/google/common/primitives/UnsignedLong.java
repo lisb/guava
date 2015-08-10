@@ -17,7 +17,6 @@ package com.google.common.primitives;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.annotations.GwtCompatible;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -39,7 +38,6 @@ import javax.annotation.Nullable;
  * @author Colin Evans
  * @since 11.0
  */
-@GwtCompatible(serializable = true)
 public final class UnsignedLong extends Number implements Comparable<UnsignedLong>, Serializable {
 
   private static final long UNSIGNED_MASK = 0x7fffffffffffffffL;

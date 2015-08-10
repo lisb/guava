@@ -16,7 +16,6 @@
 
 package com.google.common.collect;
 
-import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Objects;
 
 import java.util.Collection;
@@ -54,7 +53,6 @@ import javax.annotation.Nullable;
  * @param <V> the type of the mapped values
  * @since 7.0
  */
-@GwtCompatible
 public interface Table<R, C, V> {
   // TODO(jlevy): Consider adding methods similar to ConcurrentMap methods.
 

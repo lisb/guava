@@ -26,8 +26,6 @@ import static com.google.common.collect.CollectPreconditions.checkNonnegative;
 import static com.google.common.collect.CollectPreconditions.checkRemove;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
@@ -65,7 +63,6 @@ import javax.annotation.Nullable;
  * @author Louis Wasserman
  * @since 2.0 (imported from Google Collections Library)
  */
-@GwtCompatible(emulated = true)
 public final class Lists {
   private Lists() {}
 
@@ -83,7 +80,6 @@ public final class Lists {
    * {@linkplain ArrayList#ArrayList() constructor} directly, taking advantage
    * of the new <a href="http://goo.gl/iz2Wi">"diamond" syntax</a>.
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayList() {
     return new ArrayList<E>();
   }
@@ -105,7 +101,6 @@ public final class Lists {
    * calling {@link Collections#addAll}. This method is not actually very useful
    * and will likely be deprecated in the future.
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayList(E... elements) {
     checkNotNull(elements); // for GWT
     // Avoid integer overflow when a large array is passed in
@@ -137,7 +132,6 @@ public final class Lists {
    * {@linkplain ArrayList#ArrayList(Collection) constructor} directly, taking
    * advantage of the new <a href="http://goo.gl/iz2Wi">"diamond" syntax</a>.
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayList(Iterable<? extends E> elements) {
     checkNotNull(elements); // for GWT
     // Let ArrayList's sizing logic work, if possible
@@ -154,7 +148,6 @@ public final class Lists {
    * <p><b>Note:</b> if mutability is not required and the elements are
    * non-null, use {@link ImmutableList#copyOf(Iterator)} instead.
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayList(Iterator<? extends E> elements) {
     ArrayList<E> list = newArrayList();
     Iterators.addAll(list, elements);
@@ -179,7 +172,6 @@ public final class Lists {
    *     itself unless its size reaches {@code initialArraySize + 1}
    * @throws IllegalArgumentException if {@code initialArraySize} is negative
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayListWithCapacity(
       int initialArraySize) {
     checkNonnegative(initialArraySize, "initialArraySize"); // for GWT.
@@ -202,7 +194,6 @@ public final class Lists {
    *     estimated number of elements
    * @throws IllegalArgumentException if {@code estimatedSize} is negative
    */
-  @GwtCompatible(serializable = true)
   public static <E> ArrayList<E> newArrayListWithExpectedSize(
       int estimatedSize) {
     return new ArrayList<E>(computeArrayListCapacity(estimatedSize));
@@ -227,7 +218,6 @@ public final class Lists {
    * {@linkplain LinkedList#LinkedList() constructor} directly, taking advantage
    * of the new <a href="http://goo.gl/iz2Wi">"diamond" syntax</a>.
    */
-  @GwtCompatible(serializable = true)
   public static <E> LinkedList<E> newLinkedList() {
     return new LinkedList<E>();
   }
@@ -252,7 +242,6 @@ public final class Lists {
    * {@linkplain LinkedList#LinkedList(Collection) constructor} directly, taking
    * advantage of the new <a href="http://goo.gl/iz2Wi">"diamond" syntax</a>.
    */
-  @GwtCompatible(serializable = true)
   public static <E> LinkedList<E> newLinkedList(
       Iterable<? extends E> elements) {
     LinkedList<E> list = newLinkedList();
@@ -269,7 +258,6 @@ public final class Lists {
    * @return a new, empty {@code CopyOnWriteArrayList}
    * @since 12.0
    */
-  @GwtIncompatible("CopyOnWriteArrayList")
   public static <E> CopyOnWriteArrayList<E> newCopyOnWriteArrayList() {
     return new CopyOnWriteArrayList<E>();
   }
@@ -281,7 +269,6 @@ public final class Lists {
    * @return a new {@code CopyOnWriteArrayList} containing those elements
    * @since 12.0
    */
-  @GwtIncompatible("CopyOnWriteArrayList")
   public static <E> CopyOnWriteArrayList<E> newCopyOnWriteArrayList(
       Iterable<? extends E> elements) {
     // We copy elements to an ArrayList first, rather than incurring the

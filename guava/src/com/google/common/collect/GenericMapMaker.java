@@ -17,8 +17,6 @@
 package com.google.common.collect;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Equivalence;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -46,9 +44,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Beta
 @Deprecated
-@GwtCompatible(emulated = true)
 abstract class GenericMapMaker<K0, V0> {
-  @GwtIncompatible("To be supported")
   enum NullListener implements RemovalListener<Object, Object> {
     INSTANCE;
 
@@ -57,7 +53,6 @@ abstract class GenericMapMaker<K0, V0> {
   }
 
   // Set by MapMaker, but sits in this class to preserve the type relationship
-  @GwtIncompatible("To be supported")
   RemovalListener<K0, V0> removalListener;
 
   // No subclasses but our own
@@ -66,7 +61,6 @@ abstract class GenericMapMaker<K0, V0> {
   /**
    * See {@link MapMaker#keyEquivalence}.
    */
-  @GwtIncompatible("To be supported")
   abstract GenericMapMaker<K0, V0> keyEquivalence(Equivalence<Object> equivalence);
 
   /**
@@ -87,13 +81,11 @@ abstract class GenericMapMaker<K0, V0> {
   /**
    * See {@link MapMaker#weakKeys}.
    */
-  @GwtIncompatible("java.lang.ref.WeakReference")
   public abstract GenericMapMaker<K0, V0> weakKeys();
 
   /**
    * See {@link MapMaker#weakValues}.
    */
-  @GwtIncompatible("java.lang.ref.WeakReference")
   public abstract GenericMapMaker<K0, V0> weakValues();
 
   /**
@@ -106,7 +98,6 @@ abstract class GenericMapMaker<K0, V0> {
    *     method is scheduled for removal in March 2015.</b>
    */
   @Deprecated
-  @GwtIncompatible("java.lang.ref.SoftReference")
   public abstract GenericMapMaker<K0, V0> softValues();
 
   /**
@@ -117,7 +108,6 @@ abstract class GenericMapMaker<K0, V0> {
   /**
    * See {@link MapMaker#expireAfterAccess}.
    */
-  @GwtIncompatible("To be supported")
   abstract GenericMapMaker<K0, V0> expireAfterAccess(long duration, TimeUnit unit);
 
   /*
@@ -126,7 +116,6 @@ abstract class GenericMapMaker<K0, V0> {
    */
 
   @SuppressWarnings("unchecked") // safe covariant cast
-  @GwtIncompatible("To be supported")
   <K extends K0, V extends V0> RemovalListener<K, V> getRemovalListener() {
     return (RemovalListener<K, V>) MoreObjects.firstNonNull(removalListener, NullListener.INSTANCE);
   }
@@ -139,7 +128,6 @@ abstract class GenericMapMaker<K0, V0> {
   /**
    * See {@link MapMaker#makeCustomMap}.
    */
-  @GwtIncompatible("MapMakerInternalMap")
   abstract <K, V> MapMakerInternalMap<K, V> makeCustomMap();
 
   /**

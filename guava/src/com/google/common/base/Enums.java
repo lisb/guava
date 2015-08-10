@@ -19,8 +19,6 @@ package com.google.common.base;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.Beta;
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
@@ -39,7 +37,6 @@ import javax.annotation.Nullable;
  *
  * @since 9.0
  */
-@GwtCompatible(emulated = true)
 @Beta
 public final class Enums {
 
@@ -52,7 +49,6 @@ public final class Enums {
    *
    * @since 12.0
    */
-  @GwtIncompatible("reflection")
   public static Field getField(Enum<?> enumValue) {
     Class<?> clazz = enumValue.getDeclaringClass();
     try {
@@ -77,12 +73,10 @@ public final class Enums {
     return Platform.getEnumIfPresent(enumClass, value);
   }
 
-  @GwtIncompatible("java.lang.ref.WeakReference")
   private static final Map<Class<? extends Enum<?>>, Map<String, WeakReference<? extends Enum<?>>>>
       enumConstantCache = new WeakHashMap
               <Class<? extends Enum<?>>, Map<String, WeakReference<? extends Enum<?>>>>();
 
-  @GwtIncompatible("java.lang.ref.WeakReference")
   private static <T extends Enum<T>> Map<String, WeakReference<? extends Enum<?>>> populateCache(
       Class<T> enumClass) {
     Map<String, WeakReference<? extends Enum<?>>> result
@@ -94,7 +88,6 @@ public final class Enums {
     return result;
   }
 
-  @GwtIncompatible("java.lang.ref.WeakReference")
   static <T extends Enum<T>> Map<String, WeakReference<? extends Enum<?>>> getEnumConstants(
       Class<T> enumClass) {
     synchronized (enumConstantCache) {
